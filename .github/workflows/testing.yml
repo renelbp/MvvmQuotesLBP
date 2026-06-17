@@ -1,14 +1,10 @@
-name: Android CI
+name: Android Testing CI
 
 
 on: [ pull_request ]
-  #push:
-  #  branches: [ "main","dev" ]
-  #pull_request:
-  #  branches: [ "main","dev" ]
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
 
     steps:
@@ -20,7 +16,9 @@ jobs:
           distribution: 'temurin'
           cache: gradle
 
-      - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v3
-      - name: Build app
-        run: ./gradlew assembleDebug
+      - name: Unit Test
+        run: ./gradlew testDebugUnitTest
+
+      - name: Android Test Report
+        uses: asadmansr/android-test-report-action@v1.2.0
+        if: ${{always()}}
