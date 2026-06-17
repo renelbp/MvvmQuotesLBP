@@ -7,7 +7,7 @@ object RetrofitHelper {
 
     fun getRetrofit(): Retrofit {
         return Retrofit.Builder()
-            .baseUrl("https://drawsomething-59328-default-rtdb.europe-west1.firebasedatabase.app/")
+            .baseUrl("https://zenquotes.io/api/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }

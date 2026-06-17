@@ -19,8 +19,8 @@ class QuoteViewModel:ViewModel() {
     fun randomQuote(){
         isLoading.postValue(true)
         val quote = getRandomQuoteUseCases()
-        if (quote != null){
-            quoteModel.postValue(quote!!)
+        quote?.let{
+            quoteModel.postValue(it)
         }
         isLoading.postValue(false)
     }
@@ -29,10 +29,14 @@ class QuoteViewModel:ViewModel() {
     fun onCreate(){
         viewModelScope.launch {
             isLoading.postValue(true)
-            val result = getQuotesUseCase()
-
-            if(!result.isNullOrEmpty()){
-                quoteModel.postValue(result[0])
+            try {
+                val result = getQuotesUseCase()
+                if(result.isNotEmpty()){
+                    quoteModel.postValue(result[0])
+                }
+            } catch (e: Exception) {
+                // Log or handle error here
+            } finally {
                 isLoading.postValue(false)
             }
         }

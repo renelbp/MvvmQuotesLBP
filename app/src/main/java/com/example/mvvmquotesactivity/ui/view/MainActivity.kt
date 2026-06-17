@@ -21,12 +21,14 @@ class MainActivity : AppCompatActivity() {
         quoteViewModel.onCreate()
 
         quoteViewModel.quoteModel.observe(this, Observer { currentQuote ->
-            binding.tvQuote.text = currentQuote.quote
-            binding.tvAuthor.text = currentQuote.author
+            currentQuote?.let {
+                binding.tvQuote.text = it.quote
+                binding.tvAuthor.text = it.author
+            }
         })
 
         quoteViewModel.isLoading.observe(this, Observer {
-            binding.loading.isVisible = it
+            binding.loading.isVisible = it ?: false
         })
         binding.viewContainer.setOnClickListener {
             quoteViewModel.randomQuote()
