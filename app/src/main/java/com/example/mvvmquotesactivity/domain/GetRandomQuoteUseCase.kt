@@ -7,7 +7,7 @@ class GetRandomQuoteUseCase {
 
     operator fun invoke(): QuoteModel?{
         val quotes = QuoteProvider.quoteList
-        if(!quotes.isNullOrEmpty()){
+        if(quotes.isNotEmpty()){
             val randomNumber = (quotes.indices).random()
             return quotes[randomNumber]
         }
