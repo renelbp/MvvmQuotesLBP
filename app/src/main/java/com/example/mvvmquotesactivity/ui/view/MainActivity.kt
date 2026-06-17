@@ -22,8 +22,8 @@ class MainActivity : AppCompatActivity() {
 
         quoteViewModel.quoteModel.observe(this, Observer { currentQuote ->
             currentQuote?.let {
-                binding.tvQuote.text = it.quote
-                binding.tvAuthor.text = it.author
+                binding.tvQuote.text = currentQuote.quote
+                binding.tvAuthor.text = currentQuote.author
             }
         })
 
