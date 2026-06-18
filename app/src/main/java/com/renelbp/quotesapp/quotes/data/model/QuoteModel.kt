@@ -1,4 +1,4 @@
-package com.example.mvvmquotesactivity.data.model
+package com.renelbp.quotesapp.quotes.data.model
 
 import com.google.gson.annotations.SerializedName
 

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "726128848665",
+    "project_id": "testing-51116",
+    "storage_bucket": "testing-51116.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:726128848665:android:4fee54cf3d72f015b3df88",
+        "android_client_info": {
+          "package_name": "com.renelbp.quotesapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "726128848665-3ho7iokq5kpjf06batgrrh90uof1lq5c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhiliJvTaJFLlYX747QlVq5oRg4DU_2rI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "726128848665-3ho7iokq5kpjf06batgrrh90uof1lq5c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

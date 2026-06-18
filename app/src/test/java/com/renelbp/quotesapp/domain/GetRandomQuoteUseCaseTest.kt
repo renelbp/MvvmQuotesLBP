@@ -1,7 +1,8 @@
-package com.example.mvvmquotesactivity.domain
+package com.renelbp.quotesapp.domain
 
-import com.example.mvvmquotesactivity.data.model.QuoteModel
-import com.example.mvvmquotesactivity.data.model.QuoteProvider
+import com.renelbp.quotesapp.quotes.data.model.QuoteModel
+import com.renelbp.quotesapp.quotes.data.model.QuoteProvider
+import com.renelbp.quotesapp.quotes.domain.GetRandomQuoteUseCase
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotNull
 import org.junit.Assert.assertNull
@@ -15,7 +16,8 @@ class GetRandomQuoteUseCaseTest {
 
     @Before
     fun onBefore() {
-        getRandomQuoteUseCase = GetRandomQuoteUseCase()
+        getRandomQuoteUseCase =
+            _root_ide_package_.com.renelbp.quotesapp.quotes.domain.GetRandomQuoteUseCase()
     }
 
     @Test
@@ -33,7 +35,12 @@ class GetRandomQuoteUseCaseTest {
     @Test
     fun `when database is not empty return quote`() {
         // Given
-        val quoteList = listOf(QuoteModel("Hello world", "Aristotle"))
+        val quoteList = listOf(
+            QuoteModel(
+                "Hello world",
+                "Aristotle"
+            )
+        )
         QuoteProvider.quoteList = quoteList
 
         // When
@@ -49,9 +56,18 @@ class GetRandomQuoteUseCaseTest {
     fun `when database has multiple quotes return one of them`() {
         // Given
         val quoteList = listOf(
-            QuoteModel("Quote 1", "Author 1"),
-            QuoteModel("Quote 2", "Author 2"),
-            QuoteModel("Quote 3", "Author 3")
+            QuoteModel(
+                "Quote 1",
+                "Author 1"
+            ),
+            QuoteModel(
+                "Quote 2",
+                "Author 2"
+            ),
+            QuoteModel(
+                "Quote 3",
+                "Author 3"
+            )
         )
         QuoteProvider.quoteList = quoteList
 

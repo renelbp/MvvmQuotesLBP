@@ -1,19 +1,19 @@
-package com.example.mvvmquotesactivity.ui.viewmodel
+package com.renelbp.quotesapp.quotes.ui.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.mvvmquotesactivity.data.model.QuoteModel
-import com.example.mvvmquotesactivity.data.model.QuoteProvider
-import com.example.mvvmquotesactivity.domain.GetQuotesUseCase
-import com.example.mvvmquotesactivity.domain.GetRandomQuoteUseCase
+import com.renelbp.quotesapp.quotes.data.model.QuoteModel
+import com.renelbp.quotesapp.quotes.domain.GetQuotesUseCase
+import com.renelbp.quotesapp.quotes.domain.GetRandomQuoteUseCase
 import kotlinx.coroutines.launch
 
 class QuoteViewModel:ViewModel() {
 
-    var getQuotesUseCase = GetQuotesUseCase()
-    var getRandomQuoteUseCases = GetRandomQuoteUseCase()
-    val quoteModel = MutableLiveData<QuoteModel>()
+    var getQuotesUseCase = _root_ide_package_.com.renelbp.quotesapp.quotes.domain.GetQuotesUseCase()
+    var getRandomQuoteUseCases =
+        _root_ide_package_.com.renelbp.quotesapp.quotes.domain.GetRandomQuoteUseCase()
+    val quoteModel = MutableLiveData<com.renelbp.quotesapp.quotes.data.model.QuoteModel>()
     val isLoading = MutableLiveData<Boolean>()
 
     fun randomQuote(){

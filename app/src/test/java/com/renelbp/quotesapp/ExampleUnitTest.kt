@@ -1,4 +1,4 @@
-package com.example.mvvmquotesactivity
+package com.renelbp.quotesapp
 
 import org.junit.Test
 

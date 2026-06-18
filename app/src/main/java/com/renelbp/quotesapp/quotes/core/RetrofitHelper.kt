@@ -1,4 +1,4 @@
-package com.example.mvvmquotesactivity.core
+package com.renelbp.quotesapp.quotes.core
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
